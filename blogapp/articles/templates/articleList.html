@@ -1,0 +1,21 @@
+<h1>Article List</h1>
+<p>Displays list of articles</p>
+
+<br>
+<div>
+    <ul>
+        <a href="{% url 'signup' %}">Signup</a>
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'logout' %}">Logout</a>
+
+
+    </ul>
+</div>
+{% for article in articles %}
+    <div>
+        <h2>{{ article.title | title }}</h2>
+        <h4>&nbsp;&nbsp;&nbsp;&nbsp;By: {{ article.author | upper }} on {{article.date}} </h4>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ article.body }}</p>
+    </div>
+    <br><br>
+{% endfor %}
